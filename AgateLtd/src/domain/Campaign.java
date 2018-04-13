@@ -3,42 +3,42 @@ package domain;
 //13.04.18
 public class Campaign {
 	
-	private String Title;
-	private double EstimatedCost;
-	private String FinishDate;
-	private String StartDate;
+	private String title;
+	private double estimatedCost;
+	private String finishDate;
+	private String startDate;
 
-public  Campaign() {};
+public  Campaign() {}
 	//Default Constructor
 
 public Campaign(String Title, String StartDate, String FinishDate, double EstimatedCost) {
-	this.setTitle(Title);
-	this.setEstimatedCost(EstimatedCost);
-	this.setFinishDate(FinishDate);
-	this.setStartDate(StartDate);
+	this.settitle(title);
+	this.setestimatedCost(estimatedCost);
+	this.setfinishDate(finishDate);
+	this.setstartDate(startDate);
 	}
-public void setTitle(String Title){
-  this.Title=Title;
+public void settitle(String title){
+   this.title=title;
 }
-public String getTitle() {
-	return Title;
+public String gettitle() {
+   return title;
 }
-public void setEstimatedCost(double EstimatedCost) {
-  this.EstimatedCost=EstimatedCost;
+public void setestimatedCost(double estimatedCost) {
+   this.estimatedCost=estimatedCost;
 }
-public double getEstimatedCost() {
-	return EstimatedCost;
+public double getestimatedCost() {
+   return estimatedCost;
 }
-public void setFinishDate(String FinishDate) {
-	this.FinishDate=FinishDate;
+public void setfinishDate(String finishDate) {
+   this.finishDate=finishDate;
 }
-public String getFinishDate() {
-	return FinishDate;
+public String getfinishDate() {
+   return finishDate;
 }
-public void setStartDate(String StartDate) {
-	this.StartDate=StartDate;
+public void setstartDate(String startDate) {
+   this.startDate=startDate;
 }
 public String getStartDate() {
-	return StartDate;
+   return startDate;
 }
 }
