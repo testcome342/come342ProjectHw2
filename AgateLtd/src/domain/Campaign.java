@@ -11,31 +11,38 @@ public class Campaign {
 public  Campaign() {}
 	//Default Constructor
 
-public Campaign(String Title, String StartDate, String FinishDate, double EstimatedCost) {
-	this.settitle(title);
-	this.setestimatedCost(estimatedCost);
-	this.setfinishDate(finishDate);
-	this.setstartDate(startDate);
+public void createCampaign(String Title, String StartDate, String FinishDate, double EstimatedCost) {
+	this.setTitle(title);
+	this.setEstimatedCost(estimatedCost);
+	this.setFinishDate(finishDate);
+	this.setStartDate(startDate);
 	}
-public void settitle(String title){
+
+public Campaign(String Title, String StartDate, String FinishDate, double EstimatedCost) {
+	this.setTitle(title);
+	this.setEstimatedCost(estimatedCost);
+	this.setFinishDate(finishDate);
+	this.setStartDate(startDate);
+	}
+public void setTitle(String title){
    this.title=title;
 }
-public String gettitle() {
+public String getTitle() {
    return title;
 }
-public void setestimatedCost(double estimatedCost) {
+public void setEstimatedCost(double estimatedCost) {
    this.estimatedCost=estimatedCost;
 }
-public double getestimatedCost() {
+public double getEstimatedCost() {
    return estimatedCost;
 }
-public void setfinishDate(String finishDate) {
+public void setFinishDate(String finishDate) {
    this.finishDate=finishDate;
 }
-public String getfinishDate() {
+public String getFinishDate() {
    return finishDate;
 }
-public void setstartDate(String startDate) {
+public void setStartDate(String startDate) {
    this.startDate=startDate;
 }
 public String getStartDate() {
