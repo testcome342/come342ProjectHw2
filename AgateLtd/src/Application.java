@@ -1,7 +1,10 @@
+import java.io.IOException;
 import java.util.Scanner;
 
+import domain.Client;
+import helper.Database;
 import helper.Utils;
-
+import ui.AddNewClientUI;
 
 public class Application {
 	
@@ -11,7 +14,7 @@ public class Application {
 	 * */
 
 	public static void main(String[] args) {
-		
+		Database.init();
 		int choice;
 				
 		while(true) {
@@ -31,13 +34,13 @@ public class Application {
 			Utils.print("|     999- Exit                                 |");
 			Utils.printLine(49);
 			
-			Utils.print("Enter a number=> ");
+			Utils.print("Enter a number=> ", true);
 			choice = new Scanner(System.in).nextInt();
 			Utils.printLine(49);
 			switch(choice) {
 				
 				case 1:
-					Utils.print("|          =>Start add a new client<=           |");
+					AddNewClientUI.getInstance();
 					break;
 				case 2:
 					Utils.print("add a new campaign");
@@ -59,6 +62,7 @@ public class Application {
 					Utils.print("error, try enter a number");
 					break;
 			}
+			Utils.printRow(40);
 		}
 		
 	}

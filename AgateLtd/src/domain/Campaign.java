@@ -1,4 +1,9 @@
 package domain;
+
+import java.util.Scanner;
+
+import helper.Utils;
+
 //Onur TENGIRSEK
 //13.04.18
 public class Campaign {
@@ -11,12 +16,28 @@ public class Campaign {
 public  Campaign() {}
 	//Default Constructor
 
-public void createCampaign(String Title, String StartDate, String FinishDate, double EstimatedCost) {
-	this.setTitle(title);
-	this.setEstimatedCost(estimatedCost);
-	this.setFinishDate(finishDate);
-	this.setStartDate(startDate);
-	}
+public static Campaign createCampaign() {
+	
+	String title, finishDate, startDate;
+	Double estimatedCost;
+	
+	Utils.print("Campaign Title= ", true);
+	title = new Scanner(System.in).nextLine();
+	
+	Utils.print("Campaign Start Date= ", true);
+	startDate = new Scanner(System.in).nextLine();
+	
+	Utils.print("Campaign Finish Date= ", true);
+	finishDate = new Scanner(System.in).nextLine();
+	
+	Utils.print("Campaign Estimated Cost= ", true);
+	estimatedCost = new Scanner(System.in).nextDouble();
+	
+	Campaign campaign = new Campaign(title, startDate, finishDate, estimatedCost);
+	
+	return campaign;
+	
+}
 
 public Campaign(String Title, String StartDate, String FinishDate, double EstimatedCost) {
 	this.setTitle(title);

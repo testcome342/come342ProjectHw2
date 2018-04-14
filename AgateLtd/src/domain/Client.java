@@ -1,4 +1,5 @@
 package domain;
+import java.util.ArrayList;
 import java.util.List;
 
 import helper.Database;
@@ -9,7 +10,7 @@ public class Client {
 	
 	//ArdaBatuhanDemir
 	//12.04.2018
-	
+	private int id;
 	private String companyName;
 	private String companyAddress;
 	private String companyEmail;
@@ -18,20 +19,27 @@ public class Client {
 	private List<Campaign> campaigns;
 	
 	
-	
-	
 	public Client()
 	{
 		super();
 	}
 	
-	
-	public Client(String companyName, String companyEmail, String contactName, String companyAddress) {
+	public Client(String companyName, String companyEmail, String companyAddress, String contactName, String contactEmail) {
 		super();
+		int listCount = Database.clientList.size();
+		this.id = ++listCount;
 		this.companyName=companyName;
 		this.companyEmail=companyEmail;
-		this.contactName=contactName;
 		this.companyAddress=companyAddress;
+		this.contactName=contactName;
+		this.contactEmail=contactEmail;
+		this.campaigns = new ArrayList<Campaign>();
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getCompanyName() {
 		return companyName;
@@ -64,13 +72,13 @@ public class Client {
 		this.companyAddress = companyAddress;
 	}
 	
-	
-	public void getClients()
+	public static void getClients()
 	{
         List<Client> clientList = Database.clientList;
 		if(clientList.size() != 0) {
 			for(int i=0; i< clientList.size(); i++) {
-				Utils.print(String.valueOf(i) +" - "+ clientList.get(i).getCompanyName());
+				Utils.print(String.valueOf(clientList.get(i).getId()) +" - "+ clientList.get(i).getCompanyName() + 
+						" (Campaigns: " + clientList.get(i).getCampaigns().size() + ")");
 			}
 			
 		} else {
