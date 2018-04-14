@@ -47,7 +47,7 @@ public class Client {
 	
 	public void getClients()
 	{
-		//TODO Burası yapılacak !!
+		//TODO DB Gelecek //if for..
 	}
 	
 	public void addNewCampaign(Campaign campaign)
