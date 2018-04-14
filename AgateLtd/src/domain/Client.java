@@ -1,6 +1,9 @@
 package domain;
-
 import java.util.List;
+
+import helper.Database;
+import helper.Utils;
+
 
 public class Client {
 	
@@ -13,6 +16,23 @@ public class Client {
 	private String contactName;
 	private String contactEmail;
 	private List<Campaign> campaigns;
+	
+	
+	
+	
+	public Client()
+	{
+		super();
+	}
+	
+	
+	public Client(String companyName, String companyEmail, String contactName, String companyAddress) {
+		super();
+		this.companyName=companyName;
+		this.companyEmail=companyEmail;
+		this.contactName=contactName;
+		this.companyAddress=companyAddress;
+	}
 	public String getCompanyName() {
 		return companyName;
 	}
@@ -47,7 +67,16 @@ public class Client {
 	
 	public void getClients()
 	{
-		//TODO DB Gelecek //if for..
+        List<Client> clientList = Database.clientList;
+		if(clientList.size() != 0) {
+			for(int i=0; i< clientList.size(); i++) {
+				Utils.print(String.valueOf(i) +" - "+ clientList.get(i).getCompanyName());
+			}
+			
+		} else {
+			Utils.print("Not Found Any Company at List..!");
+		}
+		
 	}
 	
 	public void addNewCampaign(Campaign campaign)
